@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodieHub | Food Ordering System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="brand">🍔 FoodieHub</div>
+        <p>Fresh food, delivered to your door.</p>
+    </header>
+
+    <main class="container">
+        <section class="menu-section">
+            <div class="section-heading">
+                <div>
+                    <h1>Our Menu</h1>
+                    <p>Choose your favourite food.</p>
+                </div>
+                <span id="menu-count" class="pill">Loading menu...</span>
+            </div>
+
+            <div id="menu" class="food-grid" aria-live="polite">
+                Loading food menu...
+            </div>
+        </section>
+
+        <section class="cart-section">
+            <h2>🛒 Your Cart</h2>
+            <div id="cart-items">Your cart is empty.</div>
+
+            <div class="total-row">
+                <span>Total Amount</span>
+                <strong id="cart-total">₹0</strong>
+            </div>
+
+            <h2 class="checkout-title">Delivery Details</h2>
+
+            <form id="checkout-form">
+                <label for="customerName">Full Name</label>
+                <input
+                    id="customerName"
+                    name="customerName"
+                    type="text"
+                    minlength="2"
+                    maxlength="60"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+                <label for="mobile">Mobile Number</label>
+                <input
+                    id="mobile"
+                    name="mobile"
+                    type="tel"
+                    inputmode="numeric"
+                    maxlength="10"
+                    placeholder="10-digit Indian mobile number"
+                    required
+                >
+
+                <label for="address">Delivery Address</label>
+                <textarea
+                    id="address"
+                    name="address"
+                    minlength="10"
+                    maxlength="200"
+                    rows="3"
+                    placeholder="Enter your complete address"
+                    required
+                ></textarea>
+
+                <button id="place-order" class="primary-btn" type="submit">
+                    Place Order
+                </button>
+            </form>
+
+            <div id="message" class="message" role="status" aria-live="polite"></div>
+        </section>
+
+        <section class="orders-section">
+            <div class="section-heading">
+                <div>
+                    <h2>Recent Orders</h2>
+                    <p>Your orders placed during this server session.</p>
+                </div>
+                <button id="refresh-orders" class="secondary-btn" type="button">
+                    Refresh
+                </button>
+            </div>
+            <div id="orders-list">No orders loaded yet.</div>
+        </section>
+    </main>
+
+    <footer>
+        <p>FoodieHub — Web Technology Practical No. 4</p>
+    </footer>
+</body>
+</html>
